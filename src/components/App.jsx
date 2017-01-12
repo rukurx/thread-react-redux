@@ -1,7 +1,7 @@
 import React from 'react';
 import ThreadHandler from '../containers/ThreadHandler';
 import CommentsHandler from '../containers/CommentsHandler';
-import Likes from './Likes';
+import LikesHandler from '../containers/LikesHandler';
 
 const App = () => (
     <div>
@@ -13,7 +13,7 @@ const App = () => (
         <CommentsHandler />
 
         {/* いいね！一覧 */}
-        <Likes />
+        <LikesHandler />
 
     </div>
 );

@@ -10,8 +10,8 @@ import App from './components/App';
 const initialState = {
     thread: {
         id: 1,
-        title: 'これはThreadのタイトル1です',
-        body: 'これはThreadの本文1です',
+        title: 'これはCommentのタイトル1です',
+        body: 'これはCommentの本文1です',
     },
     comments: [
         {
@@ -24,7 +24,17 @@ const initialState = {
             title: 'これはCommentのタイトル2です',
             body: 'これはCommentの本文2です',
         }
-    ]
+    ],
+    likes: [
+        {
+            id: 1,
+            user_name: '太郎',
+        },
+        {
+            id: 2,
+            user_name: '花子',
+        }
+    ],
 };
 const store = createStore(reducer, initialState, applyMiddleware(thunk));
 

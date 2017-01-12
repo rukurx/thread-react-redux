@@ -1,10 +1,12 @@
 import React from 'react';
 import Like from './Like';
 
-const Likes = () => {
+const Likes = ({ likes }) => {
     return (
         <div className="likes">
-            <Like />
+            {likes.map(like =>
+                <Like key={like.id} like={like} />
+            )}
         </div>
     );
 };
