@@ -1,14 +1,14 @@
 import React from 'react';
 
-const Comment = () => {
+const Comment = ({ comment }) => {
     return (
         <div className="comment">
             <div className="user">
                 <div className="user_image"></div>
                 <div className="user_name"></div>
             </div>
-            <div className="title"></div>
-            <div className="body"></div>
+            <div className="title">{comment.title}</div>
+            <div className="body">{comment.body}</div>
 
             <div className="comment_editArea">
                 <input type="text"/>

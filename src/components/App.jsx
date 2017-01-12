@@ -1,6 +1,6 @@
 import React from 'react';
 import ThreadHandler from '../containers/ThreadHandler';
-import Comments from './Comments';
+import CommentsHandler from '../containers/CommentsHandler';
 import Likes from './Likes';
 
 const App = () => (
@@ -10,7 +10,7 @@ const App = () => (
         <ThreadHandler />
 
         {/* コメント一覧 */}
-        <Comments />
+        <CommentsHandler />
 
         {/* いいね！一覧 */}
         <Likes />
