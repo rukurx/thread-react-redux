@@ -5,7 +5,7 @@ import { createStore, applyMiddleware } from 'redux';
 import reducer from './reducers';
 import thunk from 'redux-thunk';
 
-import App from './App';
+import App from './components/App';
 
 let initialState = {};
 const store = createStore(reducer, initialState, applyMiddleware(thunk));
