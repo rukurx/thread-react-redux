@@ -11,8 +11,8 @@ const Thread = ({ thread }) => {
             <div className="body">{thread.body}</div>
 
             <div className="thread_editArea">
-                <input type="text"/>
-                <input type="text"/>
+                <input defaultValue={thread.title} />
+                <input defaultValue={thread.body} />
                 <button className="edit_save">更新</button>
             </div>
 

@@ -11,8 +11,8 @@ const Comment = ({ comment }) => {
             <div className="body">{comment.body}</div>
 
             <div className="comment_editArea">
-                <input type="text"/>
-                <input type="text"/>
+                <input defaultValue={comment.title} />
+                <input defaultValue={comment.body} />
                 <button className="edit_save">更新</button>
             </div>
 
