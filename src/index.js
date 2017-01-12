@@ -7,7 +7,13 @@ import thunk from 'redux-thunk';
 
 import App from './components/App';
 
-let initialState = {};
+const initialState = {
+    thread: {
+        id: 1,
+        title: 'これはCommentのタイトル1です',
+        body: 'これはCommentの本文1です',
+    }
+};
 const store = createStore(reducer, initialState, applyMiddleware(thunk));
 
 render(

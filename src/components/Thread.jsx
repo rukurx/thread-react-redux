@@ -1,14 +1,14 @@
 import React from 'react';
 
-const Thread = () => {
+const Thread = ({ thread }) => {
     return (
         <div className="thread">
             <div className="user">
                 <div className="user_image"></div>
                 <div className="user_name"></div>
             </div>
-            <div className="title"></div>
-            <div className="body"></div>
+            <div className="title">{thread.title}</div>
+            <div className="body">{thread.body}</div>
 
             <div className="thread_editArea">
                 <input type="text"/>
