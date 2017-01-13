@@ -12,17 +12,20 @@ const initialState = {
         id: 1,
         title: 'これはThreadのタイトル1です',
         body: 'これはThreadの本文1です',
+        isEdit: false,
     },
     comments: [
         {
             id: 1,
             title: 'これはCommentのタイトル1です',
             body: 'これはCommentの本文1です',
+            isEdit: false,
         },
         {
             id: 2,
             title: 'これはCommentのタイトル2です',
             body: 'これはCommentの本文2です',
+            isEdit: false,
         }
     ],
     likes: [

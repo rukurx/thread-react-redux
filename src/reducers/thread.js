@@ -1,8 +1,13 @@
 const thread = (state, action) => {
+    const thread = state;
+
     switch(action.type) {
 
     case 'EDIT_THREAD':
-        return state
+        thread.isEdit = !thread.isEdit;
+        return Object.assign({}, state, {
+            thread: thread
+        });
 
     case 'UPDATE_THREAD':
         return state
