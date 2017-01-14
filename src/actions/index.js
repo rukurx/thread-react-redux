@@ -14,6 +14,7 @@ export const updateThread = (title, body) => {
         type: 'UPDATE_THREAD',
         title,
         body,
+        isEdit: false,
     };
 };
 

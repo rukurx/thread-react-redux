@@ -1,6 +1,8 @@
 import React from 'react';
 
 const Thread = ({ thread, actions }) => {
+    let title, body;
+
     return (
         <div className="thread">
             <div className="user">
@@ -14,12 +16,12 @@ const Thread = ({ thread, actions }) => {
             </div>
 
             <div className="thread_editArea" style={{display: thread.isEdit ? 'block' : 'none'}}>
-                <input defaultValue={thread.title} />
-                <input defaultValue={thread.body} />
-                <button className="edit_save">更新</button>
+                <input defaultValue={thread.title} ref={input => {title = input;}} />
+                <input defaultValue={thread.body} ref={input => {body = input;}} />
+                <button className="edit_save" onClick={e => {e.preventDefault();actions.updateThread(title.value, body.value)}}>更新</button>
             </div>
 
-            <button className="edit" onClick={e => {e.preventDefault();actions.editThread(thread.id)}}>編集</button>
+            <button className="edit" onClick={e => {e.preventDefault();actions.editThread()}}>編集</button>
             <button className="delete">削除</button>
         </div>
     );
