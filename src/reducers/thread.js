@@ -1,23 +1,16 @@
 const thread = (state, action) => {
-    let thread = {};
     switch(action.type) {
 
     case 'EDIT_THREAD':
-        thread = state;
-        thread.isEdit = !thread.isEdit;
-
         return Object.assign({}, state, {
-            thread: thread
+            isEdit: !state.isEdit
         });
 
     case 'UPDATE_THREAD':
-        thread = state;
-        thread.title = action.title;
-        thread.body = action.body;
-        thread.isEdit = action.isEdit;
-
         return Object.assign({}, state, {
-            thread: thread
+            title: action.title,
+            body: action.body,
+            isEdit: action.isEdit
         });
 
     case 'DELETE_THREAD':
