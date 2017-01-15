@@ -52,3 +52,11 @@ export const addComment = (title, body) => {
         body
     };
 }
+
+// コメント削除
+export const deleteComment = (id) => {
+    return {
+        type: 'DELETE_COMMENT',
+        id
+    }
+}

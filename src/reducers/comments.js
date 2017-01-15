@@ -19,7 +19,9 @@ const comments = (state = {}, action, entireState) => {
         return state
 
     case 'DELETE_COMMENT':
-        return state
+        const comments = [].concat(state);
+        const filteredComments = comments.filter(item => item.id !== action.id);
+        return filteredComments;
 
     default:
         return state;

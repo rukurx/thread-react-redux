@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Comment = ({ comment }) => {
+const Comment = ({ comment, actions }) => {
     return (
         <div className="comment">
             <div className="user">
@@ -17,7 +17,7 @@ const Comment = ({ comment }) => {
             </div>
 
             <button className="edit">編集</button>
-            <button className="delete">削除</button>
+            <button className="delete" onClick={e => {e.preventDefault();actions.deleteComment(comment.id)}}>削除</button>
         </div>
     );
 };
