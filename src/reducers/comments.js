@@ -1,7 +1,16 @@
 const comments = (state = {}, action, entireState) => {
     switch(action.type) {
     case 'ADD_COMMENT':
-        return state
+        let stateId = state.length + 1;
+        return [
+            ...state,
+            {
+                id: stateId,
+                title: action.title,
+                body: action.body,
+                isEdit: false
+            }
+        ];
 
     case 'EDIT_COMMENT':
         return state

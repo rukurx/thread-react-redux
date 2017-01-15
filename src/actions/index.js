@@ -40,3 +40,15 @@ export const countThreadBodyLength = (body) => {
         body
     };
 };
+
+/****************************************
+■ コメント操作
+****************************************/
+// コメント追加
+export const addComment = (title, body) => {
+    return {
+        type: 'ADD_COMMENT',
+        title,
+        body
+    };
+}

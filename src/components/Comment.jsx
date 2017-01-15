@@ -10,7 +10,7 @@ const Comment = ({ comment }) => {
             <div className="title">{comment.title}</div>
             <div className="body">{comment.body}</div>
 
-            <div className="comment_editArea">
+            <div className="comment_editArea" style={{display: comment.isEdit ? 'block' : 'none'}}>
                 <input defaultValue={comment.title} />
                 <input defaultValue={comment.body} />
                 <button className="edit_save">更新</button>
