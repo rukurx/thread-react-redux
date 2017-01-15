@@ -24,3 +24,19 @@ export const deleteThread = () => {
         type: 'DELETE_THREAD'
     };
 };
+
+// スレッドタイトル文字数チェック
+export const countThreadTitleLength = (title) => {
+    return {
+        type: 'COUNT_THREAD_TITLE_LENGTH',
+        title
+    };
+};
+
+// スレッド本文文字数チェック
+export const countThreadBodyLength = (body) => {
+    return {
+        type: 'COUNT_THREAD_BODY_LENGTH',
+        body
+    };
+};

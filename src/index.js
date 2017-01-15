@@ -13,6 +13,8 @@ const initialState = {
         title: 'これはThreadのタイトル1です',
         body: 'これはThreadの本文1です',
         isEdit: false,
+        titleLength: 17,
+        bodyLength: 15
     },
     comments: [
         {
