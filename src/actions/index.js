@@ -51,12 +51,30 @@ export const addComment = (title, body) => {
         title,
         body
     };
-}
+};
 
 // コメント削除
 export const deleteComment = (id) => {
     return {
         type: 'DELETE_COMMENT',
         id
-    }
-}
+    };
+};
+
+// コメント編集ボタンクリック(編集モードにする)
+export const editComment = (id) => {
+    return {
+        type: 'EDIT_COMMENT',
+        id
+    };
+};
+
+// コメント内容更新
+export const updateComment = (id, title, body) => {
+    return {
+        type: 'UPDATE_COMMENT',
+        id,
+        title,
+        body
+    };
+};
