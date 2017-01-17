@@ -3,6 +3,8 @@ import ThreadHandler from '../containers/ThreadHandler';
 import CommentsHandler from '../containers/CommentsHandler';
 import AddCommentHandler from '../containers/AddCommentHandler';
 import LikesHandler from '../containers/LikesHandler';
+import GetMoreLikesBtnHandler from '../containers/GetMoreLikesBtnHandler';
+import LoadingHandler from '../containers/LoadingHandler';
 
 const App = () => (
     <div>
@@ -18,6 +20,8 @@ const App = () => (
 
         {/* いいね！一覧 */}
         <LikesHandler />
+        <LoadingHandler />
+        <GetMoreLikesBtnHandler />
 
     </div>
 );

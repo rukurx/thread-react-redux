@@ -41,6 +41,9 @@ const initialState = {
             user_name: '花子',
         }
     ],
+    loading: {
+        isActive: false
+    }
 };
 
 const logger = createLogger();

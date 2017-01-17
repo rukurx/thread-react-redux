@@ -1,8 +1,10 @@
+import axios from 'axios';
 /****************************************
 ■ スレッド操作
 ****************************************/
 // スレッド編集ボタンクリック(編集モードにする)
 export const editThread = () => {
+
     return {
         type: 'EDIT_THREAD'
     };
@@ -78,3 +80,57 @@ export const updateComment = (id, title, body) => {
         body
     };
 };
+
+/****************************************
+■ いいね操作
+****************************************/
+// ローディングを表示する
+export const showLoading = () => {
+    return {
+        type: 'SHOW_LOADING'
+    }
+}
+
+// ローディングを隠す
+export const hideLoading = () => {
+    return {
+        type: 'HIDE_LOADING'
+    }
+}
+
+// エラーメッセージを表示する
+// export const showError = () => {
+//     return {
+//         type: 'SHOW_ERROR',
+//         message: '失敗しました。'
+//     }
+// }
+
+// Likeしたユーザを追加する
+export const successGetMoreLikes = (likes) => {
+    return {
+        type: 'SUCCESS_GET_MORE_LIKES',
+        likes: likes
+    }
+}
+
+// ajaxでLikeしたユーザを取得する
+export const getMoreLikes = () => {
+    return ( dispatch, getState ) => {
+        dispatch(showLoading());
+        return axios.get('http://localhost:3001/likes/')
+            .then(response => {
+                if (response.status === 200) {
+                    dispatch(successGetMoreLikes(response.data.likes));
+                    return dispatch(hideLoading());
+                } else {
+                    // dispatch(showError());
+                    return dispatch(hideLoading());
+                }
+            })
+            .catch(() => {
+                // dispatch(showError());
+                return dispatch(hideLoading());
+            });
+    };
+}
