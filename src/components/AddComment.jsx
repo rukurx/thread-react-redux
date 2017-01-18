@@ -7,7 +7,7 @@ const AddComment = ({ actions }) => {
         <div>
             <input ref={input => {title = input;}} />
             <input ref={input => {body = input;}} />
-            <button className="edit_save" onClick={e => {e.preventDefault();actions.addComment(title.value, body.value)}}>追加</button>
+            <button className="edit_save" onClick={e => {e.preventDefault();actions.requestAddComment(title.value, body.value)}}>追加</button>
         </div>
     );
 };

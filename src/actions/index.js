@@ -81,6 +81,31 @@ export const updateComment = (id, title, body) => {
     };
 };
 
+export const requestAddComment = (title, body) => {
+    return ( dispatch, getState ) => {
+        // dispatch(showLoading());
+        return axios.get('http://localhost:3001/comment/add/', {
+                params: {
+                    title: title,
+                    body: body
+                }
+            })
+            .then(response => {
+                if (response.status === 200) {
+                    return dispatch(addComment(response.data.title, response.data.body));
+                    // dispatch(successGetMoreLikes(response.data.likes));
+                    // return dispatch(hideLoading());
+                } else {
+                    // dispatch(showError());
+                    // return dispatch(hideLoading());
+                }
+            })
+            .catch(() => {
+                // dispatch(showError());
+                // return dispatch(hideLoading());
+            });
+    };
+}
 /****************************************
 ■ いいね操作
 ****************************************/
