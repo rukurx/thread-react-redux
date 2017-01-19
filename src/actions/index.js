@@ -1,10 +1,10 @@
-import axios from 'axios';
+import * as API from '../api';
+
 /****************************************
 ■ スレッド操作
 ****************************************/
 // スレッド編集ボタンクリック(編集モードにする)
 export const editThread = () => {
-
     return {
         type: 'EDIT_THREAD'
     };
@@ -81,19 +81,14 @@ export const updateComment = (id, title, body) => {
     };
 };
 
+// ajaxでコメントを登録する
 export const requestAddComment = (title, body) => {
     return ( dispatch, getState ) => {
         // dispatch(showLoading());
-        return axios.get('http://localhost:3001/comment/add/', {
-                params: {
-                    title: title,
-                    body: body
-                }
-            })
+        return API.addComment(title, body)
             .then(response => {
                 if (response.status === 200) {
                     return dispatch(addComment(response.data.title, response.data.body));
-                    // dispatch(successGetMoreLikes(response.data.likes));
                     // return dispatch(hideLoading());
                 } else {
                     // dispatch(showError());
@@ -143,7 +138,7 @@ export const successGetMoreLikes = (likes) => {
 export const getMoreLikes = () => {
     return ( dispatch, getState ) => {
         dispatch(showLoading());
-        return axios.get('http://localhost:3001/likes/')
+        return API.likes()
             .then(response => {
                 if (response.status === 200) {
                     dispatch(successGetMoreLikes(response.data.likes));
